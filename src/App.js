@@ -4,7 +4,7 @@ import { signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import axios from 'axios';
 
 // Configure axios to point to your Laravel backend
-axios.defaults.baseURL = 'http://192.168.1.119';
+axios.defaults.baseURL = 'https://avocatlawoffice.com/testauthgoogle/public';
 
 function App() {
   const [user, setUser] = useState(null);
