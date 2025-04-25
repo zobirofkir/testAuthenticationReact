@@ -26,7 +26,7 @@ function App() {
           Authorization: `Bearer ${token}`,
         },
       });
-      setUser(response.data);
+      setUser(response.data.data);
     } catch (err) {
       console.error('Failed to fetch user profile:', err);
       localStorage.removeItem('accessToken');
@@ -50,7 +50,7 @@ function App() {
       });
 
       // 4. Store the Passport token and update UI
-      localStorage.setItem('accessToken', response.data.accessToken);
+      localStorage.setItem('accessToken', response.data.data.accessToken);
       setUser(response.data.data.user);
 
       console.log(response.data.data);
