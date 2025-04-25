@@ -4,7 +4,7 @@ import { signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import axios from 'axios';
 
 // Configure axios to point to your Laravel backend
-axios.defaults.baseURL = 'http://0.0.0.0';
+axios.defaults.baseURL = 'http://192.168.1.119';
 
 function App() {
   const [user, setUser] = useState(null);
