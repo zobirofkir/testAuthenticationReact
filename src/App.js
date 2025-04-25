@@ -13,7 +13,7 @@ function App() {
 
   // Check for existing session on component mount
   useEffect(() => {
-    const token = localStorage.getItem('access_token');
+    const token = localStorage.getItem('accessToken');
     if (token) {
       fetchUserProfile(token);
     }
@@ -29,7 +29,7 @@ function App() {
       setUser(response.data);
     } catch (err) {
       console.error('Failed to fetch user profile:', err);
-      localStorage.removeItem('access_token');
+      localStorage.removeItem('accessToken');
     }
   };
 
@@ -50,7 +50,7 @@ function App() {
       });
 
       // 4. Store the Passport token and update UI
-      localStorage.setItem('access_token', response.data.access_token);
+      localStorage.setItem('accessToken', response.data.accessToken);
       setUser(response.data.user);
       
     } catch (err) {
@@ -67,7 +67,7 @@ function App() {
       // 1. Logout from Laravel
       await axios.post('/api/logout', {}, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`,
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
         },
       });
 
@@ -75,7 +75,7 @@ function App() {
       await firebaseSignOut(auth);
 
       // 3. Clear local state
-      localStorage.removeItem('access_token');
+      localStorage.removeItem('accessToken');
       setUser(null);
     } catch (err) {
       setError(err.response?.data?.error || err.message);
