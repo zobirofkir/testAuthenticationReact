@@ -51,7 +51,7 @@ function App() {
 
       // 4. Store the Passport token and update UI
       localStorage.setItem('accessToken', response.data.accessToken);
-      setUser(response.data.user);
+      setUser(response.data.data.user);
 
       console.log(response.data.data);
       
