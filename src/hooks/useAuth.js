@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { auth, googleProvider } from './firebase';
+import { auth, googleProvider } from '../firebase';
 import { signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import axios from 'axios';
 
