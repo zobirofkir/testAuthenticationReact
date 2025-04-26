@@ -3,7 +3,7 @@ import { auth, googleProvider } from '../firebase';
 import { signInWithPopup, signOut as firebaseSignOut } from 'firebase/auth';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://avocatlawoffice.com/testauthgoogle/public';
+axios.defaults.baseURL = 'https://avocatlawoffice.com/livex/public';
 
 export const useAuth = () => {
   const [user, setUser] = useState(null);
