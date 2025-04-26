@@ -39,7 +39,7 @@ export const useAuth = () => {
       const result = await signInWithPopup(auth, googleProvider);
       const idToken = await result.user.getIdToken();
       
-      const response = await axios.post('/api/login/google', {
+      const response = await axios.post('/api/auth/login/google', {
         token: idToken,
       });
 
